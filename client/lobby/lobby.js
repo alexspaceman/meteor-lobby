@@ -1,20 +1,23 @@
 if (Meteor.isClient) {
 
   Template.lobby.helpers({
-    username: function() {
-      return Session.get('username');
+    user_name: function() {
+      return Session.get('user_name');
     }
   , rooms: function() {
       return Rooms.find({});
     }
+  , room_name: function() {
+      return Rooms.findOne(this._id).name || this._id;
+  }
   });
 
   Template.lobby.events({
   	'click .create': function() {
       var users = [];
-      users.push({name:Session.get('username')});
+      users.push({name:Session.get('user_name')});
       var _id = Rooms.insert({
-        creator: Session.get('username')
+        creator: Session.get('user_name')
       , users: users
       , messages: []
       });
@@ -22,11 +25,9 @@ if (Meteor.isClient) {
   	}
   , 'click .join': function(events) {
       var _id = events.target.id;
-      Rooms.update(_id, {
-          $addToSet: {
-            users: {
-            name: Session.get('username')
-          }
+      Guests.update(Session.get('user_id'), {
+        $set: {
+          room_id: _id
         }
       });
       Router.go('/room/' + _id)

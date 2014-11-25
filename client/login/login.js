@@ -27,9 +27,9 @@ if (Meteor.isClient) {
       return false;
     }
   , 'click button.guest': function(event) {
-      var username = 'guest' + Math.floor(Math.random() * 10000);
-      Session.set('username', username);
-      Guests.insert({username: username});
+      var name = 'guest' + Math.floor(Math.random() * 10000);
+      Session.set('user_name', name);
+      Session.set('user_id', Guests.insert({name: name}));
       Router.go('lobby');
     }
   })

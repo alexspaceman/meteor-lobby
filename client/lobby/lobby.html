@@ -1,15 +1,15 @@
 <template name="lobby">
   <div class="top">
     <a href="/" class="back button">Sign Out</a>
-    <a class="username lobster">{{username}}</a>
+    <a class="user-name lobster">{{user_name}}</a>
   </div>
-  <h1>Welcome {{username}}</h1>
+  <h1>Welcome {{user_name}}</h1>
   <button class="create">Create</button>
   <h3>Rooms</h3>
   <ul>
 	  {{#each rooms}}
 	    <li>
-        <a id="{{_id}}" class="join">{{_id}}</a>
+        <a id="{{_id}}" class="join">{{room_name}}</a>
         <span style="float:right">
           {{users.length}}
           <i class="fa fa-smile-o"></i>

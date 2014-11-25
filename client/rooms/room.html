@@ -1,10 +1,26 @@
 <template name="room">
+
   <div class="top">
     <a href="/lobby" class="back button">Back to Lobby</a>
-    <a class="username lobster">{{username}}</a>
+    {{#if user_name_saved}}
+      <a class="user-name lobster edit-user">{{user_name}}</a>
+    {{else}}
+      <form class="user-name">
+        <input name="new_user_name" placeholder="Name..">
+      </form>
+    {{/if}}
   </div>
+
   <div class="room">
-    <h3>Room: {{name}}</h3>
+    <h3>Room: 
+      {{#if room_name_saved}}
+        <a class="edit-room">{{room_name}}</a>
+      {{else}}
+        <form class="room-name">
+          <input name="new_room_name" placeholder="Room name..">
+        </form>
+      {{/if}}
+    </h3>
     Created by {{creator}}
   </div>
 
@@ -31,4 +47,5 @@
     <input name="message" placeholder="Message.." id="newMessage">
     <button>Send</button>
   </form>
+
 </template>
