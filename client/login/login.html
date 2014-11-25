@@ -1,0 +1,21 @@
+<template name="login">
+  <h1>Lobby</h1>
+  <button class="login">LOGIN</button>
+  <button class="sign-up">SIGN UP</button>
+  <button class="guest">JOIN AS GUEST</button>
+  {{#if logging}}
+    {{#if login}}
+      <form class="login">
+        <input name="name" placeholder="username..">
+        <input name="password" type="password" placeholder="password..">
+        <button>LOGIN</button>
+      </form>
+    {{else}}
+      <form class="sign-up">
+        <input name="name" placeholder="username..">
+        <input name="password" type="password" placeholder="password..">
+        <button>SIGN UP</button>
+      </form>
+    {{/if}}
+  {{/if}}
+</template>

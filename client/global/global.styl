@@ -1,0 +1,89 @@
+@import 'nib'
+@import 'jeet'
+
+max-width = 980px
+
+global-reset()
+
+edit()
+
+*
+  box-sizing border-box
+
+html, body
+  height 100%
+  
+body
+  text-align center
+  color #444
+  font-family: 'Helvetica', Arial
+  
+.container
+  position relative
+  height 100%
+  max-width max-width
+  margin 0 auto
+  
+a
+  cursor pointer
+  transition all 0.3s ease
+  text-decoration none
+  color inherit
+  &:hover
+    color rgb(186, 33, 33)
+    
+.lobster
+  font-family: 'Lobster', cursive
+  
+h1
+  font-family: 'Lobster', cursive
+  font-size 3em
+  padding 60px 0
+  
+h2
+  font-size 2em
+  padding 30px
+
+h3
+  font-size 1.4em
+  padding 15px
+  
+ul
+  text-align left
+  max-width 500px
+  margin 0 auto
+  padding 0 10px
+  
+li
+  display block
+  padding-bottom 10px
+  
+button, .button
+  background transparent
+  border 2px solid
+  padding 15px
+  font-size 1.3em
+  font-weight bold
+  cursor pointer
+  margin-bottom 40px
+  transition all 0.3s ease
+
+  &:hover
+  	background #444
+  	color silver
+   
+input
+  border 1px solid
+  font-size 1.2em
+  padding 17px 
+  margin 10px 0
+  
+.row
+  margin 0 20px
+  position relative
+  height calc(100% - 275px)
+  
+  &:after
+    content ""
+    clear both
+    display table

@@ -1,0 +1,34 @@
+<template name="room">
+  <div class="top">
+    <a href="/lobby" class="back button">Back to Lobby</a>
+    <a class="username lobster">{{username}}</a>
+  </div>
+  <div class="room">
+    <h3>Room: {{name}}</h3>
+    Created by {{creator}}
+  </div>
+
+  <div class="row">
+
+    <div class="chat-area">
+      {{#each messages}}
+        <div class="message">
+         {{user}}: {{message}} <span class="when">{{when}}</span>
+        </div>
+      {{/each}}
+    </div>
+
+    <ul class="users">
+      <h3>Users</h3>
+  	  {{#each users}}
+  	    <li>{{name}}</li>
+  	  {{/each}}
+    </ul>
+
+  </div>
+
+  <form class="new-message">
+    <input name="message" placeholder="Message.." id="newMessage">
+    <button>Send</button>
+  </form>
+</template>
