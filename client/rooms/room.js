@@ -1,8 +1,5 @@
 if (Meteor.isClient) {
 
-  Session.set('user_name_saved', true);
-  Session.set('room_name_saved', true);
-
 	Template.room.helpers({
 	  user_name: function() {
       return Session.get('user_name');
@@ -33,9 +30,6 @@ if (Meteor.isClient) {
       event.target.message.value = '';
       return false;
     }
-  , 'click .edit-room': function(event) {
-      Session.set('room_name_saved', false);
-    }
   , 'click .edit-user': function(event) {
       Session.set('user_name_saved', false);
     }
@@ -45,6 +39,9 @@ if (Meteor.isClient) {
       Session.set('user_name_saved', true);
       return false;
     }   
+  , 'click .edit-room': function(event) {
+      Session.set('room_name_saved', false);
+    }    
   , 'submit .room-name': function(event) {
       var name = event.target.new_room_name.value;
       Rooms.update(this._id, {

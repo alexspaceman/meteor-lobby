@@ -1,7 +1,13 @@
 <template name="lobby">
   <div class="top">
     <a href="/" class="back button">Sign Out</a>
-    <a class="user-name lobster">{{user_name}}</a>
+    {{#if user_name_saved}}
+      <a class="user-name lobster edit-user">{{user_name}}</a>
+    {{else}}
+      <form class="user-name">
+        <input name="new_user_name" placeholder="Name..">
+      </form>
+    {{/if}}
   </div>
   <h1>Welcome {{user_name}}</h1>
   <button class="create">Create</button>
