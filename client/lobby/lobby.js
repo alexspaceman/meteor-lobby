@@ -23,6 +23,7 @@ if (Meteor.isClient) {
     'click .edit-user': function(event) {
       Session.set('user_name_saved', false);
     }
+    
   , 'submit .user-name': function(event) {
       var name = event.target.new_user_name.value;
       Session.set('user_name', name);

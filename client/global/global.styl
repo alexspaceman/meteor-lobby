@@ -5,8 +5,6 @@ max-width = 980px
 
 global-reset()
 
-edit()
-
 *
   box-sizing border-box
 
@@ -15,15 +13,16 @@ html, body
   
 body
   text-align center
-  color #444
-  font-family: 'Helvetica', Arial
-  
+  color #333
+  font-family 'Helvetica', Arial
+  background linear-gradient(top, #C3FFC2, #0074d9)
+
 .container
   position relative
   height 100%
   max-width max-width
   margin 0 auto
-  
+
 a
   cursor pointer
   transition all 0.3s ease
@@ -59,8 +58,8 @@ li
   padding-bottom 10px
   
 button, .button
+  border none
   background transparent
-  border 2px solid
   padding 15px
   font-size 1.3em
   font-weight bold
@@ -69,8 +68,8 @@ button, .button
   transition all 0.3s ease
 
   &:hover
-  	background #444
-  	color silver
+    background #444
+    color silver
    
 input
   border 1px solid
